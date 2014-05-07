@@ -246,8 +246,8 @@ containing a value of this type.
         public static int title_logo=0x7f02002d;
     }
     public static final class id {
-        public static int RelativeLayout1=0x7f060014;
-        public static int action_settings=0x7f06001d;
+        public static int RelativeLayout1=0x7f060016;
+        public static int action_settings=0x7f06001f;
         public static int activitu_paly_main_textView_cal=0x7f06000b;
         public static int activity_play_main_imageView_shakeMotion=0x7f060006;
         public static int activity_play_main_textView_count=0x7f060009;
@@ -256,23 +256,25 @@ containing a value of this type.
         public static int activity_record_view_totalBadge=0x7f06000c;
         public static int activity_top_button_record=0x7f060012;
         public static int activity_top_button_start=0x7f060011;
-        public static int activity_twitter_oauth_progressBar=0x7f060013;
+        public static int activity_twitter_oauth_progressBar=0x7f060015;
         public static int chartView=0x7f06000d;
         public static int hybrid=0x7f060004;
         public static int imageView1=0x7f060010;
         public static int loadAd=0x7f060007;
+        public static int loadButton=0x7f060013;
         public static int none=0x7f060000;
         public static int normal=0x7f060001;
         public static int satellite=0x7f060002;
         public static int showAd=0x7f060008;
-        public static int show_event_dialog_badge0=0x7f060016;
-        public static int show_event_dialog_badge1=0x7f060017;
-        public static int show_event_dialog_badge2=0x7f060018;
-        public static int show_event_dialog_badge3=0x7f060019;
-        public static int show_event_dialog_badge4=0x7f06001a;
-        public static int show_event_dialog_button1=0x7f06001b;
-        public static int show_event_dialog_button2=0x7f06001c;
-        public static int show_event_dialog_messageTextView=0x7f060015;
+        public static int showButton=0x7f060014;
+        public static int show_event_dialog_badge0=0x7f060018;
+        public static int show_event_dialog_badge1=0x7f060019;
+        public static int show_event_dialog_badge2=0x7f06001a;
+        public static int show_event_dialog_badge3=0x7f06001b;
+        public static int show_event_dialog_badge4=0x7f06001c;
+        public static int show_event_dialog_button1=0x7f06001d;
+        public static int show_event_dialog_button2=0x7f06001e;
+        public static int show_event_dialog_messageTextView=0x7f060017;
         public static int terrain=0x7f060003;
         public static int textView1=0x7f060005;
         public static int textView3=0x7f06000a;
