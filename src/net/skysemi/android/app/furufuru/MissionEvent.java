@@ -75,7 +75,7 @@ public class MissionEvent {
 	public void showEnevt(int count, int calorie){
 
 		// カロリーミッション処理
-		if(calorie == 10){
+		if(calorie == 0){
 			if(calorie != mShowCheckCalorie){
 				mShowCheckCalorie = calorie;
 				SharedPreferences.Editor editor = mPreference.edit();

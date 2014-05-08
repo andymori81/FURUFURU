@@ -37,21 +37,6 @@
             android:text="@string/activity_top_button_record"
             android:textSize="30sp" />
 
-           <TextView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="aaa"/>
-    <Button android:id="@+id/loadButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="iii"
-        android:onClick="loadInterstitial"/>
-    <Button android:id="@+id/showButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showInterstitial"
-        android:text="uuu"/>
-
 
     </LinearLayout>
 
