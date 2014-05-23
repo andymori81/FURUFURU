@@ -10,11 +10,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 public class TwitterOAuthActivity extends Activity {
-	
+
+	private static final int OAUTH_ACTION_VIEW = 0;
 	private String mCallbackURL;
     private Twitter mTwitter;
     private RequestToken mRequestToken;
@@ -26,15 +25,31 @@ public class TwitterOAuthActivity extends Activity {
 
         mCallbackURL = getString(R.string.twitter_callback_url);
         mTwitter = TwitterUtils.getTwitterInstance(this);
-
+        setResult(Activity.RESULT_CANCELED);
         startAuthorize();
-				
-		
+//        Bundle extras = getIntent().getExtras();
+//        if(extras != null){
+//        	if(extras.getString("from_activity").equals("mission_event_dialog"))
+//            	startAuthorize();
+//
+//        }
+
+    }
+
+    @Override
+    public void onRestart(){
+    	super.onRestart();
+    	Log.d("onRestart()", "true");
+    }
+    @Override
+    public void onResume(){
+    	super.onResume();
+    	Log.d("onResume()", "true");
     }
 
     /**
      * OAuth認証（厳密には認可）を開始します。
-     * 
+     *
      * @param listener
      */
     private void startAuthorize() {
@@ -42,13 +57,14 @@ public class TwitterOAuthActivity extends Activity {
             @Override
             protected String doInBackground(Void... params) {
                 try {
-                	
+
                 	Log.d("startAuthorize()", "true");
-                	
+
                     mRequestToken = mTwitter.getOAuthRequestToken(mCallbackURL);
                     return mRequestToken.getAuthorizationURL();
                 } catch (TwitterException e) {
                     e.printStackTrace();
+                    Log.d("startAuthorize()", "false");
                 }
                 return null;
             }
@@ -56,24 +72,27 @@ public class TwitterOAuthActivity extends Activity {
             @Override
             protected void onPostExecute(String url) {
                 if (url != null) {
-                	
+
                 	Log.d("onPostExecute()", "true");
-                	
+
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                    startActivity(intent);
+                    startActivityForResult(intent, OAUTH_ACTION_VIEW);
+
                 } else {
-                	
+
                     // 失敗。。。
                 	Log.d("onPostExecute()", "false");
+
                 }
             }
         };
         task.execute();
-        
+
     }
 
     @Override
     public void onNewIntent(Intent intent) {
+    	Log.d("onNewIntent()", "true");
         if (intent == null
                 || intent.getData() == null
                 || !intent.getData().toString().startsWith(mCallbackURL)) {
@@ -96,25 +115,22 @@ public class TwitterOAuthActivity extends Activity {
             protected void onPostExecute(AccessToken accessToken) {
                 if (accessToken != null) {
                     // 認証成功！
-                    showToast("認証成功！");
-                    successOAuth(accessToken);
-                } else {
-                    // 認証失敗。。。
-                    showToast("認証失敗。。。");
+                	Log.d("onPostExecute()", "認証成功");
+                	TwitterUtils.storeAccessToken(getApplicationContext(), accessToken);
+                	setResult(Activity.RESULT_OK);
                 }
+                finish();
             }
         };
         task.execute(verifier);
-        finish();
-    }
-
-    private void successOAuth(AccessToken accessToken) {
-        TwitterUtils.storeAccessToken(this, accessToken);
         
     }
-
-    private void showToast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    }
+    
+//    @Override
+//	protected void onActivityResult(int requestCode, int resultCode, Intent intent){
+//		if(requestCode != Activity.RESULT_OK){
+//			finish();
+//		}
+//    }
 
 }

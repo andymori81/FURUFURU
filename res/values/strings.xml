@@ -4,32 +4,32 @@
     <string name="app_name">FURUFURU</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    
+
     <!-- activity_top -->
     <string name="activity_top_button_start">スタート</string>
     <string name="activity_top_button_record">記録</string>
-    
-    
+
+
     <!-- activity_top -->
     <string name="activity_play_main_textView_count">回</string>
     <string name="activity_play_main_textView_calorie">kcal</string>
-        
+
     <!-- activity_record_view -->
     <string name="activity_record_view_textView_title">記録</string>
     <string name="activity_record_view_button_tab_a">カロリー</string>
     <string name="activity_record_view_button_tab_b">回数</string>
-        
+
     <!-- MissionEvent.java -->
     <string name="missionEvent_showDialogMessage_A">%1$dキロカロリー\nミッション達成</string>
     <string name="missionEvent_showDialogMessage_B">%1$d日連続\n%2$dキロカロリー\nミッション達成</string>
-    
+
     <!-- show_event_dialog -->
     <string name="show_event_dialog_button1">OK</string>
     <string name="show_event_dialog_button2">つぶやく</string>
-    
-    <string name="twitter_consumer_key"></string>
-    <string name="twitter_consumer_secret"></string>
+
+    <string name="twitter_consumer_key">BVhusFW0m7fZ0JOKmI8EDQ</string>
+    <string name="twitter_consumer_secret">qDih3ZhG9tE4eyhx7frKq9wMItAx4IBdXNYQTyDZ4</string>
 	<string name="twitter_callback_url">furu://twitter</string>
-    
+
 
 </resources>
