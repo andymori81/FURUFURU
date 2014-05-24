@@ -27,9 +27,5 @@
     <string name="show_event_dialog_button1">OK</string>
     <string name="show_event_dialog_button2">つぶやく</string>
 
-    <string name="twitter_consumer_key">BVhusFW0m7fZ0JOKmI8EDQ</string>
-    <string name="twitter_consumer_secret">qDih3ZhG9tE4eyhx7frKq9wMItAx4IBdXNYQTyDZ4</string>
-	<string name="twitter_callback_url">furu://twitter</string>
-
 
 </resources>

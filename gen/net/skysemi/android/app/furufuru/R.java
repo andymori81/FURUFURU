@@ -410,9 +410,6 @@ containing a value of this type.
          */
         public static final int show_event_dialog_button1=0x7f070027;
         public static final int show_event_dialog_button2=0x7f070028;
-        public static final int twitter_callback_url=0x7f07002b;
-        public static final int twitter_consumer_key=0x7f070029;
-        public static final int twitter_consumer_secret=0x7f07002a;
     }
     public static final class style {
         /** 

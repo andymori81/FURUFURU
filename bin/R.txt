@@ -157,9 +157,6 @@ int string missionEvent_showDialogMessage_A 0x7f070025
 int string missionEvent_showDialogMessage_B 0x7f070026
 int string show_event_dialog_button1 0x7f070027
 int string show_event_dialog_button2 0x7f070028
-int string twitter_callback_url 0x7f07002b
-int string twitter_consumer_key 0x7f070029
-int string twitter_consumer_secret 0x7f07002a
 int style AppBaseTheme 0x7f0a0000
 int style AppTheme 0x7f0a0001
 int style MissionDialogTheme 0x7f0a0002

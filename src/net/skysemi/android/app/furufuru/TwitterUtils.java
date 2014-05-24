@@ -1,31 +1,31 @@
 package net.skysemi.android.app.furufuru;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 public class TwitterUtils {
 
+	private static final String API_KEY = "";
+	private static final String API_SECRET = "";
     private static final String TOKEN = "token";
     private static final String TOKEN_SECRET = "token_secret";
     private static final String PREF_NAME = "twitter_access_token";
 
     /**
      * Twitterインスタンスを取得します。アクセストークンが保存されていれば自動的にセットします。
-     * 
+     *
      * @param context
      * @return
      */
     public static Twitter getTwitterInstance(Context context) {
-        String consumerKey = context.getString(R.string.twitter_consumer_key);
-        String consumerSecret = context.getString(R.string.twitter_consumer_secret);
 
         TwitterFactory factory = new TwitterFactory();
         Twitter twitter = factory.getInstance();
-        twitter.setOAuthConsumer(consumerKey, consumerSecret);
+        twitter.setOAuthConsumer(API_KEY, API_SECRET);
 
         if (hasAccessToken(context)) {
             twitter.setOAuthAccessToken(loadAccessToken(context));
@@ -35,7 +35,7 @@ public class TwitterUtils {
 
     /**
      * アクセストークンをプリファレンスに保存します。
-     * 
+     *
      * @param context
      * @param accessToken
      */
@@ -50,7 +50,7 @@ public class TwitterUtils {
 
     /**
      * アクセストークンをプリファレンスから読み込みます。
-     * 
+     *
      * @param context
      * @return
      */
@@ -68,7 +68,7 @@ public class TwitterUtils {
 
     /**
      * アクセストークンが存在する場合はtrueを返します。
-     * 
+     *
      * @return
      */
     public static boolean hasAccessToken(Context context) {

@@ -14,7 +14,8 @@ import android.util.Log;
 public class TwitterOAuthActivity extends Activity {
 
 	private static final int OAUTH_ACTION_VIEW = 0;
-	private String mCallbackURL;
+	private static final String CALLBACK_URL = "furu://twitter";
+
     private Twitter mTwitter;
     private RequestToken mRequestToken;
 
@@ -23,17 +24,14 @@ public class TwitterOAuthActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_twitter_oauth);
 
-        mCallbackURL = getString(R.string.twitter_callback_url);
         mTwitter = TwitterUtils.getTwitterInstance(this);
         setResult(Activity.RESULT_CANCELED);
-        startAuthorize();
-//        Bundle extras = getIntent().getExtras();
-//        if(extras != null){
-//        	if(extras.getString("from_activity").equals("mission_event_dialog"))
-//            	startAuthorize();
-//
-//        }
 
+//        Bundle extras = getIntent().getExtras();
+//        if(extras != null && extras.getString("from_activity").equals("mission_event_dialog")){
+        startAuthorize();
+
+//        }
     }
 
     @Override
@@ -60,7 +58,7 @@ public class TwitterOAuthActivity extends Activity {
 
                 	Log.d("startAuthorize()", "true");
 
-                    mRequestToken = mTwitter.getOAuthRequestToken(mCallbackURL);
+                    mRequestToken = mTwitter.getOAuthRequestToken(CALLBACK_URL);
                     return mRequestToken.getAuthorizationURL();
                 } catch (TwitterException e) {
                     e.printStackTrace();
@@ -95,7 +93,7 @@ public class TwitterOAuthActivity extends Activity {
     	Log.d("onNewIntent()", "true");
         if (intent == null
                 || intent.getData() == null
-                || !intent.getData().toString().startsWith(mCallbackURL)) {
+                || !intent.getData().toString().startsWith(CALLBACK_URL)) {
             return;
         }
         String verifier = intent.getData().getQueryParameter("oauth_verifier");
@@ -123,9 +121,9 @@ public class TwitterOAuthActivity extends Activity {
             }
         };
         task.execute(verifier);
-        
+
     }
-    
+
 //    @Override
 //	protected void onActivityResult(int requestCode, int resultCode, Intent intent){
 //		if(requestCode != Activity.RESULT_OK){
