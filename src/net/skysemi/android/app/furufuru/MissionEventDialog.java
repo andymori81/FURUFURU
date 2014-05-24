@@ -87,17 +87,17 @@ public class MissionEventDialog extends Activity{
 	protected void onActivityResult(int requestCode, int resultCode, Intent intent){
 		if(requestCode == FOR_OAUTH){
 			if(requestCode == Activity.RESULT_OK){
-				showToast("認証成功！");
+				showToast(getString(R.string.toast_message_oauth_success));
 			}else{
-				showToast("認証失敗。。。");
+				showToast(getString(R.string.toast_message_oauth_failure));
 			}
 		}
 		if(requestCode == FOR_TWEET){
 			if(resultCode == Activity.RESULT_OK){
-				showToast("ツイートが完了しました！");
+				showToast(getString(R.string.toast_message_tweet_success));
 				finish();
 			}else{
-				showToast("ツイートに失敗しました。。。");
+				showToast(getString(R.string.toast_message_tweet_failure));
 			}
 		}
 	}

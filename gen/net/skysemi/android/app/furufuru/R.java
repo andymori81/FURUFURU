@@ -406,10 +406,14 @@ containing a value of this type.
          */
         public static final int missionEvent_showDialogMessage_A=0x7f070025;
         public static final int missionEvent_showDialogMessage_B=0x7f070026;
-        /**  show_event_dialog 
+        /**  Mission_event_dialog 
          */
         public static final int show_event_dialog_button1=0x7f070027;
         public static final int show_event_dialog_button2=0x7f070028;
+        public static final int toast_message_oauth_failure=0x7f07002a;
+        public static final int toast_message_oauth_success=0x7f070029;
+        public static final int toast_message_tweet_failure=0x7f07002c;
+        public static final int toast_message_tweet_success=0x7f07002b;
     }
     public static final class style {
         /** 

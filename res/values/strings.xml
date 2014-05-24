@@ -23,9 +23,13 @@
     <string name="missionEvent_showDialogMessage_A">%1$dキロカロリー\nミッション達成</string>
     <string name="missionEvent_showDialogMessage_B">%1$d日連続\n%2$dキロカロリー\nミッション達成</string>
 
-    <!-- show_event_dialog -->
+    <!-- Mission_event_dialog -->
     <string name="show_event_dialog_button1">OK</string>
-    <string name="show_event_dialog_button2">つぶやく</string>
+    <string name="show_event_dialog_button2">つぶや</string>
+    <string name="toast_message_oauth_success">認証成功！</string>
+    <string name="toast_message_oauth_failure">認証失敗。。。</string>
+    <string name="toast_message_tweet_success">ツイートが完了しました！</string>
+    <string name="toast_message_tweet_failure">ツイートに失敗しました。。。</string>
 
 
 </resources>
